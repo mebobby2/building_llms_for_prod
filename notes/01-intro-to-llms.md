@@ -206,3 +206,173 @@ Mitigating hallucinations and bias in AI systems involves refining model
 training, using verification techniques, and ensuring the training data is
 diverse and representative. Finding a balance between maximizing the
 model’s potential and avoiding these issues remains challenging.
+
+## From Language Models to Large Language Models
+The evolution of language models has seen a paradigm shift from pre-
+trained language models (LMs) to the creation of Large Language Models (LLMs). LMs, such as
+ELMo and BERT, first captured context-aware word representations
+through pre-training and fine-tuning for specific tasks. However, the
+introduction of LLMs, as demonstrated by GPT-3 and PaLM, proved that
+scaling model size and data can unlock emergent skills that outperform their
+smaller counterparts. Through in-context learning, these LLMs can handle
+more complex tasks.
+
+### Emergent Abilities in LLMs
+As we discussed, an ability is considered emergent when larger models
+exhibit it, but it’s absent in smaller models—a key factor contributing to the
+success of Large Language Models. Emergent abilities in Large Language
+Models (LLMs) are empirical phenomena that occur when the size of
+language models exceeds specific thresholds. As we increase the models’
+size, emergent abilities become more evident, influenced by aspects like the
+computational power used in training and the model’s parameters.
+
+### What Are Emergent Abilities
+This phenomenon indicates that the models are learning and generalizing
+beyond their pre-training in ways that were not explicitly programmed or
+anticipated. A distinct pattern emerges when these abilities are depicted on a
+scaling curve. Initially, the model’s performance appears almost random,
+but it significantly improves once a certain scale threshold is reached. This
+phenomenon is known as a phase transition, representing a dramatic
+behavior change that would not have been apparent from examining
+smaller-scale systems.
+
+Scaling language models have predominantly focused on increasing the
+amount of computation, expanding the model parameters, and enlarging the
+training dataset size. New abilities can sometimes emerge with reduced
+training computation or fewer model parameters, especially when models
+are trained on higher-quality data. Additionally, the appearance of emergent
+abilities is influenced by factors such as the volume and quality of the data
+and the quantity of the model’s parameters. Emergent abilities in Large
+Language Models surface as the models are scaled up and are not
+predictable by merely extending the trends observed in smaller models.
+
+### Evaluation Benchmarks for Emergent Abilities
+Several benchmarks are used to evaluate the emergent abilities of language
+models, such as BIG-Bench, TruthfulQA, the Massive Multi-task Language
+Understanding (MMLU) benchmark, and the Word in Context (WiC)
+benchmark
+
+### Risks With Emergent Abilities
+As language models are scaled up, emergent risks also become a concern.
+These include societal challenges related to accuracy, bias, and toxicity.
+Adopting strategies that encourage models to be “helpful, harmless, and
+honest” can mitigate these risks.
+
+For instance, the WinoGender benchmark, which assesses gender bias in
+occupational contexts, has shown that while scaling can enhance model
+performance, it may also amplify biases, especially in ambiguous situations.
+Larger models tend to memorize training data more, but methods like
+deduplication can reduce this risk.
+
+Other risks involve potential vulnerabilities or harmful content synthesis
+that might be more prevalent in future language models or remain
+uncharacterized in current models.
+
+### A Shift Towards General-Purpose Models
+The emergence of new abilities has shifted the NLP community’s
+perspective and utilization of these models. While NLP traditionally
+focused on task-specific models, the scaling of models has spurred research
+on “general-purpose” models capable of handling a wide range of tasks not
+explicitly included in their training.
+
+This shift is evident in instances where scaled, few-shot prompted general-
+purpose models have outperformed task-specific models that were fine-
+tuned. Examples include GPT-3 setting new benchmarks in TriviaQA and
+PiQA, PaLM excelling in arithmetic reasoning, and the multimodal
+Flamingo model achieving top performance in visual question answering.
+Furthermore, the ability of general-purpose models to execute tasks with
+minimal examples has expanded their applications beyond traditional NLP research. These include translating natural language instructions for robotic
+execution, user interaction, and multi-modal reasoning.
+
+### Expanding the Context Window
+#### The Importance of Context Length
+Context window in language models represents the number of input tokens
+the model can process simultaneously. In models like GPT-4, it currently
+stands at approximately 32K or roughly 50 pages of text. However, recent
+advancements have extended this to an impressive 100K tokens or about
+156 pages, as seen in Claude by Anthropic.
+
+Context length primarily enables the model to process and comprehend
+larger datasets simultaneously, offering a deeper understanding of the
+context. This feature is particularly beneficial when inputting a substantial
+amount of specific data into a language model and posing questions related
+to this data. For example, when analyzing a lengthy document about a
+particular company or issue, a larger context window allows the language
+model to review and remember more of this unique information, resulting
+in more accurate and tailored responses.
+
+#### Limitations of the Original Transformer Architecture
+Despite its strengths, the original transformer architecture faces challenges
+in handling extensive context lengths. Specifically, the attention layer
+operations in the transformer have quadratic time and space complexity
+(represented with ) in relation to the number of input tokens, . As the
+context length expands, the computational resources required for training
+and inference increase substantially.
+
+To better understand this, let’s examine the computational complexity of the
+transformer architecture. The complexity of the attention layer in the
+transformer model is , where is the context length (number of input tokens)
+and is the embedding size.
+
+This complexity stems from two primary operations in the attention layer:
+linear projections to create Query, Key, and Value matrices (complexity ~ )
+and the multiplication of these matrices (complexity ~ ). As the context
+length or embedding size increases, the computational complexity also
+grows quadratically, presenting a challenge for processing larger context
+lengths.
+
+#### Optimization Techniques to Expand the Context Window
+Despite the computational challenges associated with the original
+transformer architecture, researchers have developed a range of
+optimization techniques to enhance the transformer’s efficiency and
+increase its context length capacity to 100K tokens:
+* ALiBi Positional Encoding
+* Sparse Attention
+* FlashAttention
+* Multi-Query Attention (MQA)
+
+#### FlashAttention-2
+FlashAttention-2 emerges as an advancement over the original
+FlashAttention, focusing on optimizing the speed and memory efficiency of
+the attention layer in transformer models. This upgraded version is
+redeveloped from the ground up utilizing Nvidia’s new primitives. It
+performs approximately 2x faster than its predecessor, achieving up to 230
+TFLOPs on A100 GPUs.
+
+FlashAttention-2 improves on the original FlashAttention in various ways.
+* Changing the algorithm to spend more time on matmul FLOPs
+minimizes the quantity of non-matmul FLOPs, which are 16x more
+expensive than matmul FLOPs.
+* It optimizes parallelism across batch size, headcount, and sequence
+length dimensions, leading to significant acceleration, particularly for
+long sequences.
+* It enhances task partitioning within each thread block to reduce
+synchronization and communication between warps, resulting in
+fewer shared memory reads/writes.
+* It adds features such as support for attention head dimensions up to
+256 and multi-query attention (MQA), further expanding the context
+window.
+
+With these enhancements, FlashAttention-2 is a successful step toward
+context window expansion (while still retaining the underlying restrictions
+of the original transformer architecture).
+
+#### LongNet: A Leap Towards Billion-Token Context Window
+LongNet represents a transformative advancement in the field of
+transformer optimization, as detailed in the paper “LONGNET: Scaling
+Transformers to 1,000,000,000 Tokens”. This innovative approach is set to
+extend the context window of language models to an unprecedented 1
+billion tokens, significantly enhancing their ability to process and analyze
+large volumes of data.
+
+The primary advancement in LongNet is the implementation of “dilated
+attention.” This innovative attention mechanism allows for an exponential
+increase in the attention field as the gap between tokens widens, inversely
+reducing attention calculations as the distance between tokens increases.
+(since every token will attend to a smaller number of tokens). This design
+approach balances the limited attention resources and the need to access
+every token in the sequence.
+
+LongNet’s dilated attention mechanism has a linear computational
+complexity, a major improvement over the normal transformer’s quadratic
+difficulty.
