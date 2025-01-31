@@ -18,3 +18,11 @@ LLMs are generally trained with full (float32) or half precision (float16) float
 The quantization process involves representing the range of FP32 weight values in a lower precision format, such as FP16 or even INT4 (4-bit integers). A typical example is converting FP32 to INT8.
 
 The overall impact on the quality of an LLM depends on the specific quantization technique used.
+
+https://github.com/huggingface/transformers/issues/23970
+... the bitsandbytes library only works on CUDA GPU.
+
+https://en.wikipedia.org/wiki/CUDA
+In computing, CUDA is a proprietary parallel computing platform and application programming interface (API) that allows software to use certain types of graphics processing units (GPUs) for accelerated general-purpose processing, an approach called general-purpose computing on GPUs. CUDA was created by Nvidia in 2006. When it was first introduced, the name was an acronym for Compute Unified Device Architecture, but Nvidia later dropped the common use of the acronym and now rarely expands it.
+
+CUDA is a software layer that gives direct access to the GPU's virtual instruction set and parallel computational elements for the execution of compute kernels. In addition to drivers and runtime kernels, the CUDA platform includes compilers, libraries and developer tools to help programmers accelerate their applications.
