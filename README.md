@@ -8,6 +8,4 @@
 * python3 -m pip uninstall -y -r requirements.txt
 
 ## Upto
-Page 135
-
-Limitations of Few-shot Prompting
+Page 147
