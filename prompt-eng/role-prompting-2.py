@@ -10,7 +10,7 @@ llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-pro",
 )
 template = """
-As a futuristic robot band conductor, I need you tot help me come up with a song title
+As a futuristic robot band conductor, I need you to help me come up with a song title
 """
 prompt = PromptTemplate(
     input_variables=["theme", "year"],

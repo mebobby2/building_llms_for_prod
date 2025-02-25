@@ -24,7 +24,7 @@ print(chain.run({}))
 
 
 # 5mins // which is wrong
-# model gemini-1.5-pro gets it right with CoT thought. Correct answer is 20mins
+# model gemini-1.5-pro gets it right without CoT. Correct answer is 20mins
 
 
 ######################## Chain of Thought
