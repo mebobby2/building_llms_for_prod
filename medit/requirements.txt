@@ -1,0 +1,6 @@
+python-dotenv
+dataclasses
+typing
+pydantic
+pydantic_ai
+rich
