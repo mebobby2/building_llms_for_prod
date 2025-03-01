@@ -1,0 +1,7 @@
+requests
+newspaper3k
+langchain
+python-dotenv
+deeplake
+lxml_html_clean
+langchain_google_genai
