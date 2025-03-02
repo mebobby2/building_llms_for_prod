@@ -8,6 +8,12 @@
 * python3 -m pip uninstall -y -r requirements.txt
 
 ## Upto
-Page 165
+Page 173
 
-LlamaIndex Introduction
+
+Establish a storage context using the
+
+Before that - figure out why the activeloop data source isn't created
+
+then, switch from the default llama-index openai embedding model to a open source hugging face one
+https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings/
