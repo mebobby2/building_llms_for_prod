@@ -1,0 +1,9 @@
+llama-index
+llama-index-vector-stores-chroma
+tiktoken
+chromadb
+llama-index-embeddings-huggingface
+wikipedia
+llama-index-vector-stores-deeplake
+deeplake
+dotenv
