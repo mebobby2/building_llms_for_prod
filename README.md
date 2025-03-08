@@ -12,7 +12,7 @@ Qdrant
 ```
 docker pull qdrant/qdrant
 
-docker run -p 6333:6333 -v /Users/BobbyLei/Desktop/learn/building_llms_for_prod/wikiq/.qdrantdata:/qdrant/storage qdrant/qdrant
+docker run -p 6333:6333 -v /Users/BobbyLei/Desktop/learn/building_llms_for_prod/.qdrantdata:/qdrant/storage qdrant/qdrant
 ```
 
 Navgiate to: `http://localhost:6333/dashboard#/welcome`

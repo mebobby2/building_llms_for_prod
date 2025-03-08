@@ -1,11 +1,11 @@
 import os
 import logging
 import sys
-from llama_index.vector_stores.deeplake import DeepLakeVectorStore
-from llama_index.core import download_loader
+# from llama_index.vector_stores.deeplake import DeepLakeVectorStore
+# from llama_index.core import download_loader
 from llama_index.core.node_parser import SimpleNodeParser
-from llama_index.core.storage.storage_context import StorageContext
-from llama_index.core import VectorStoreIndex
+# from llama_index.core.storage.storage_context import StorageContext
+# from llama_index.core import VectorStoreIndex
 
 from dotenv import load_dotenv
 load_dotenv()
