@@ -53,4 +53,9 @@ print("Answer:", response.response)
 question3 = "In what year did the Goldman Sachs Research Paper entitled 'AI Data Centers and the Coming US Power Demand Surge' come out?"
 print(f"Question: {question3}")
 response = query_engine.query(question3)
-print("Answer:", response.response)
+print("Answer:", response.response) # Answer = 2024
+
+# When I asked the question "In what year did the Goldman Sachs Research Paper entitled 'AI Data Centers and the Coming US Power Demand Surge' come out?" to gemini-1.5-flash, it returned the following answer:
+# There is no publicly available Goldman Sachs research paper with the exact title "AI Data Centers and the Coming US Power Demand Surge."  While Goldman Sachs has published extensively on the energy demands of data centers and the impact of AI, a paper with that precise title doesn't appear in their readily accessible research archives.  To find a specific paper, you would need a more precise title or a link to the publication.
+
+# This highlights the power of RAG-based models in providing contextually relevant answers to questions, even when the information is not directly available in the training data.
