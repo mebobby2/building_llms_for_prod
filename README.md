@@ -19,12 +19,4 @@ docker run -p 6333:6333 -v /Users/BobbyLei/Desktop/learn/building_llms_for_prod/
 Navgiate to: `http://localhost:6333/dashboard#/welcome`
 
 ## Upto
-Page 173
-
-
-Establish a storage context using the
-
-Before that - figure out why the activeloop data source isn't created. Activeloop usability sucks, switch to pgvector instead https://docs.llamaindex.ai/en/stable/examples/vector_stores/postgres/
-
-then, switch from the default llama-index openai embedding model to a open source hugging face one
-https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings/
+Page 174
