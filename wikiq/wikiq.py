@@ -39,7 +39,18 @@ storage_context = StorageContext.from_defaults(vector_store=vector_store)
 index = VectorStoreIndex.from_documents(documents, storage_context=storage_context)
 
 query_engine = index.as_query_engine()
-response = query_engine.query("What does NLP stands for?")
-print(response.response)
-response = query_engine.query("What does the Chinese room experiment have to do with NLP?")
-print(response.response)
+
+question1 = "What does NLP stand for?"
+print(f"Question: {question1}")
+response = query_engine.query(question1)
+print("Answer:", response.response)
+
+question2 = "What does the Chinese room experiment have to do with NLP?"
+print(f"Question: {question2}")
+response = query_engine.query(question2)
+print("Answer:", response.response)
+
+question3 = "In what year did the Goldman Sachs Research Paper entitled 'AI Data Centers and the Coming US Power Demand Surge' come out?"
+print(f"Question: {question3}")
+response = query_engine.query(question3)
+print("Answer:", response.response)
