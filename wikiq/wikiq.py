@@ -6,14 +6,18 @@ from llama_index.core.storage.storage_context import StorageContext
 from llama_index.core import VectorStoreIndex
 import qdrant_client
 from llama_index.core import download_loader
-#from llama_index.embeddings.fastembed import FastEmbedEmbedding
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import Settings
+from llama_index.llms.gemini import Gemini
 
-# Settings.embed_model = FastEmbedEmbedding(model_name="BAAI/bge-base-en-v1.5")
+from dotenv import load_dotenv
+load_dotenv()
+
 Settings.embed_model = HuggingFaceEmbedding(
     model_name="BAAI/bge-small-en-v1.5"
 )
+Settings.llm = Gemini(model="models/gemini-1.5-flash")
+
 
 logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
@@ -33,3 +37,9 @@ client = qdrant_client.QdrantClient(host="localhost", port=6333)
 vector_store = QdrantVectorStore(client=client, collection_name="wikiq")
 storage_context = StorageContext.from_defaults(vector_store=vector_store)
 index = VectorStoreIndex.from_documents(documents, storage_context=storage_context)
+
+query_engine = index.as_query_engine()
+response = query_engine.query("What does NLP stands for?")
+print(response.response)
+response = query_engine.query("What does the Chinese room experiment have to do with NLP?")
+print(response.response)

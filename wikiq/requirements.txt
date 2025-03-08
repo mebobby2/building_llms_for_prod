@@ -1,3 +1,5 @@
 llama-index-embeddings-huggingface
 wikipedia
 llama-index-vector-stores-qdrant==0.4.3
+llama-index-llms-gemini
+python-dotenv
