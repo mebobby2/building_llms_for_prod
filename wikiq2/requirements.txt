@@ -1,5 +1,0 @@
-llama-index
-wikipedia
-dotenv
-llama-index-vector-stores-qdrant
-llama-index-embeddings-huggingface

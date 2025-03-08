@@ -1,11 +1,11 @@
 # Building LLMs for Production
 
 ## Setup
-* python3 -m venv my_venv_name
+* python3 -m venv my_venv_name (`python3.10 -m venv my_venv_name` to create a virtual env with a another Python version)
 * source my_venv_name/bin/activate
 * deactivate
-* python3 -m pip install -r requirements.txt
-* python3 -m pip uninstall -y -r requirements.txt
+* pip3 install -r requirements.txt
+* pip3 uninstall -y -r requirements.txt
 
 ## Set up Vector DB
 Qdrant
