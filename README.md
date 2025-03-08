@@ -6,6 +6,7 @@
 * deactivate
 * pip3 install -r requirements.txt
 * pip3 uninstall -y -r requirements.txt
+* pip3 list
 
 ## Set up Vector DB
 Qdrant
