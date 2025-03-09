@@ -19,6 +19,6 @@ docker run -p 6333:6333 -v /Users/BobbyLei/Desktop/learn/building_llms_for_prod/
 Navgiate to: `http://localhost:6333/dashboard#/welcome`
 
 ## Upto
-Page 176
+Page 191
 
-LangChain vs. LlamaIndex vs. OpenAI Assistants
+Alternating Human/AI Messages
