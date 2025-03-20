@@ -19,6 +19,6 @@ docker run -p 6333:6333 -v /Users/BobbyLei/Desktop/learn/building_llms_for_prod/
 Navgiate to: `http://localhost:6333/dashboard#/welcome`
 
 ## Upto
-Page 204
+Page 225
 
-This class specializes in managing comma-separated outputs
+In the previous code, we used the prompt to extract relation triplets
