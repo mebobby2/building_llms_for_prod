@@ -1,3 +1,5 @@
 */.env
 .qdrantdata
 */my_venv_name/*
+
+lib
