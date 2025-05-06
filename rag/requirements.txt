@@ -1,0 +1,7 @@
+langchain
+langchain-community
+langchain-qdrant
+sentence-transformers
+langchain_huggingface
+langchain_google_genai
+python-dotenv
