@@ -33,6 +33,9 @@ with open("my_file.txt", "w") as f:
 loader = TextLoader("my_file.txt")
 docs_from_file = loader.load()
 
+# Use CharacterTextSplitter to split the documents into text snippets called 'chunk'.
+# Chunk_overlap is the number of characters that overlap between two chunks. It preserves context
+# and improves coherence by ensuring that important information is not cut off at the boundaries of chunks.
 text_splitter = CharacterTextSplitter(
     chunk_size=200, chunk_overlap=20, separator="")
 
