@@ -1,0 +1,8 @@
+unstructured
+selenium
+langchain
+langchain-qdrant
+langchain_huggingface
+langchain_google_genai
+python-dotenv
+langchain-community
