@@ -107,3 +107,24 @@ computational effort required to convert text into BPE tokens and vice
 versa. For quicker and more straightforward text segmentation, the
 CharacterTextSplitter may be a preferable option, and it offers a more direct
 and less computationally intensive approach to dividing text.
+
+## Embeddings
+Embeddings are dense vector representations that capture semantic
+information, making them highly effective for various machine learning
+tasks, including clustering and classification. They translate semantic
+similarities perceived by humans into measurable closeness in vector space.
+These embeddings can be generated for multiple data types, such as text,
+images, and audio.
+
+For textual data, models like the GPT series and LLaMA can create vector
+embeddings for words, sentences, or paragraphs within their internal layers.
+Convolutional neural networks (CNNs) like VGG and Inception can
+produce embeddings for image data. In contrast, audio data can be
+transformed into vector representations by applying image embedding
+techniques to visual representations of audio frequencies, such as
+spectrograms. Generally, deep neural networks can be trained to transform
+data into vector form, resulting in high-dimensional embeddings.
+
+***
+A multi-modal vector store, can store various data types, including images, audio, videos, text,
+and metadata.
