@@ -48,9 +48,26 @@ with open("transcription.txt", "r") as f:
 texts = text_splitter.split_text(transcription_text)
 docs = [Document(page_content=text) for text in texts[:4]]
 
+
+# The following code shows the prompt template used with the map_reduce
+# chain type. The map-reduce process first summarizes each document
+# separately using a language model (Map step), turning each into a new
+# document. Then, it combines all of them into one document (Reduce step)
+# to form the final summary.
+# The "stuff" approach involves using all text from the transcribed video in a
+# single prompt, which is a basic and straightforward method. However, it
+# might not be the most efficient for handling large volumes of text.
+# The 'refine' summarization chain is an approach designed to generate more
+# precise and context-sensitive summaries. This method follows an iterative
+# process to enhance the summary by incorporating additional context as
+# needed. In practice, it initiates by summarizing the first text chunk.
+# Subsequently, the evolving summary is enriched with new information from
+# each subsequent chunk. It can produce more accurate and context-aware
+# summaries than chains like 'stuff' and 'map_reduce'.
 chain = load_summarize_chain(llm, chain_type="map_reduce")
 
 output_summary = chain.invoke(docs)
 
 wrapped_text = textwrap.fill(output_summary['output_text'], width=100)
 print(wrapped_text)
+# print (chain.llm_chain.prompt.template)
