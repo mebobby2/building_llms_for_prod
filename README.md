@@ -19,6 +19,6 @@ docker run -p 6333:6333 -v /Users/BobbyLei/Desktop/learn/building_llms_for_prod/
 Navgiate to: `http://localhost:6333/dashboard#/welcome`
 
 ## Upto
-Page 286
+Page 295
 
-This pipeline showcases the integration of LangChain, OpenAI, and Deep
+Loading and Splitting Texts

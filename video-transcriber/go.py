@@ -103,7 +103,12 @@ qa = RetrievalQA.from_chain_type(
 )
 
 results = qa.invoke("Summarize the mentions of google according to their AI program")
+wrapped_text = textwrap.fill(results['result'], width=100)
+print(wrapped_text)
 
+print("***")
+
+results = qa.invoke("According to Yann LeCun, what are the limitations of large language models?")
 wrapped_text = textwrap.fill(results['result'], width=100)
 print(wrapped_text)
 
