@@ -4,3 +4,5 @@ langchain
 langchain_google_genai
 yt_dlp
 git+https://github.com/openai/whisper.git
+langchain-qdrant
+langchain_huggingface
