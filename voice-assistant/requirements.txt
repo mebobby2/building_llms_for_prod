@@ -1,2 +1,14 @@
 bs4
 requests
+python-dotenv
+google-generativeai
+langchain
+langchain_google_genai
+langchain-qdrant
+langchain_huggingface
+langchain-community
+git+https://github.com/openai/whisper.git
+streamlit
+streamlit-chat
+audio-recorder-streamlit
+elevenlabs
