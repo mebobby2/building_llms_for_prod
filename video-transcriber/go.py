@@ -129,6 +129,19 @@ print(wrapped_text)
 # summaries than chains like 'stuff' and 'map_reduce'.
 # chain = load_summarize_chain(llm, chain_type="map_reduce")
 
+# When dealing with extensive documents and language models, selecting the
+# appropriate strategy is crucial for efficient information utilization. We
+# covered three different approaches: “stuff,” “map-reduce,” and “refine.”
+# The “stuff” method involves incorporating all text from documents into a
+# single prompt. While the simplest to implement, this approach may
+# encounter limitations if the text exceeds the context size of the language
+# model and might not be the most efficient for processing large amounts of
+# text. On the contrary, the “map-reduce” and “refine” approaches offer more
+# sophisticated methods to process and extract meaningful information from
+# large documents. The parallelized “map-reduce” strategy delivers faster
+# processing times, while the “refine” method produces higher-quality output
+# but is slower due to its sequential nature.
+
 # output_summary = chain.invoke(docs)
 
 # wrapped_text = textwrap.fill(output_summary['output_text'], width=100)
