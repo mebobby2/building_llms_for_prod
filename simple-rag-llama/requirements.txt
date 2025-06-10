@@ -1,0 +1,6 @@
+llama-index-embeddings-huggingface
+llama-index-vector-stores-qdrant
+llama-index-llms-google-genai
+python-dotenv
+llama-index-question-gen-guidance
+llama-index-question-gen-openai
