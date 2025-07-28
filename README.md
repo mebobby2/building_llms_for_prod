@@ -23,6 +23,4 @@ Page 373
 
 You should see the printed output that looks similar to the following
 
-Before that: getting 403 when agent is trying to do a google search; Requests to this API customsearch method google.customsearch.v1.CustomSearchService.List are blocke
-
 Even before that: consider doing the practical projects in the 'RAG - Metrics & Evaluation'
