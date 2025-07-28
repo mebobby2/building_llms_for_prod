@@ -24,3 +24,5 @@ Page 373
 You should see the printed output that looks similar to the following
 
 Even before that: consider doing the practical projects in the 'RAG - Metrics & Evaluation'
+Upto: 352
+Fix error: ModuleNotFoundError: No module named 'ragas.metrics.critique'
