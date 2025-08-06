@@ -5,6 +5,9 @@ from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.evaluation import generate_question_context_pairs, RetrieverEvaluator
 
+import pandas as pd
+import asyncio
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -40,7 +43,9 @@ retriever = vector_index.as_retriever(similarity_top_k=2)
 retriever_evaluator = RetrieverEvaluator.from_metric_names(
     ["mrr", "hit_rate"], retriever=retriever)
 
-eval_results = retriever_evaluator.aevaluate(qa_dataset)
+eval_results = asyncio.run(retriever_evaluator.aevaluate_dataset(qa_dataset))
+
+print(f"Evaluated {len(eval_results)} results.")
 
 
 def display_results(name, eval_results):
@@ -58,4 +63,6 @@ def display_results(name, eval_results):
     return metric_df
 
 
-display_results("HuggingFace Embedding Retriever", eval_results)
+print(display_results("HuggingFace Embedding Retriever", eval_results))
+#                     Retriever Name  Hit Rate       MRR
+# 0  HuggingFace Embedding Retriever  0.692308  0.557692

@@ -24,6 +24,5 @@ Page 373
 You should see the printed output that looks similar to the following
 
 Even before that: consider doing the practical projects in the 'RAG - Metrics & Evaluation'
-Upto: 358
-The generated QA dataset can now be used
-Fix error: BaseRetrievalEvaluator.aevaluate() missing 1 required positional argument: 'expected_ids'
+Upto: 359
+We will improve our assessment by using new measures
