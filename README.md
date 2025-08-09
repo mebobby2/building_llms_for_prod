@@ -8,6 +8,11 @@
 * pip3 uninstall -y -r requirements.txt
 * pip3 list
 
+### If using ipython
+* pip install ipython (or add it to the project's requirements.txt)
+* ipython (starts ipython)
+* %run your_script_name.py
+
 ## Set up Vector DB
 Qdrant
 ```
@@ -22,7 +27,3 @@ Navgiate to: `http://localhost:6333/dashboard#/welcome`
 Page 373
 
 You should see the printed output that looks similar to the following
-
-Even before that: consider doing the practical projects in the 'RAG - Metrics & Evaluation'
-Upto: 359
-We will improve our assessment by using new measures
