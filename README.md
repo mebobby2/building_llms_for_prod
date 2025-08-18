@@ -24,6 +24,4 @@ docker run -p 6333:6333 -v /Users/BobbyLei/Desktop/learn/building_llms_for_prod/
 Navgiate to: `http://localhost:6333/dashboard#/welcome`
 
 ## Upto
-Page 373
-
-You should see the printed output that looks similar to the following
+Page 395

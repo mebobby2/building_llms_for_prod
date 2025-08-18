@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langchain_huggingface
+langchain_google_genai
+python-dotenv
+langchain-google-community
+faiss-cpu
+sentence-transformers
+langchain-experimental
