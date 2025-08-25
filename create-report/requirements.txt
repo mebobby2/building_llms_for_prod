@@ -1,0 +1,10 @@
+requests
+newspaper3k
+python-dotenv
+lxml_html_clean
+langchain
+langchain-community
+langchain-qdrant
+langchain_huggingface
+langchain_google_genai
+sentence_transformers

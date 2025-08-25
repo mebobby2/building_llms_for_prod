@@ -31,3 +31,5 @@ which is good for simple, straightforward tasks.
 with a set of actions and then execute these actions in sequence or
 parallel. The results of intermediary actions can also modify the plan
 if necessary.
+
+Agents are intelligent systems that use LLMs for reasoning and planning rather than content generation.
